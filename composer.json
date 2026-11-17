@@ -1,0 +1,41 @@
+{
+  "name": "itmosoft/laravel-feature-flags",
+  "description": "Database-backed feature flags with deterministic percentage rollouts and subject overrides for Laravel applications.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "illuminate/database": "^12.0 || ^13.0",
+    "illuminate/support": "^12.0 || ^13.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10.0 || ^11.0",
+    "phpunit/phpunit": "^11.5 || ^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ItmoSoft\\FeatureFlags\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ItmoSoft\\FeatureFlags\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ItmoSoft\\FeatureFlags\\FeatureFlagsServiceProvider"
+      ],
+      "aliases": {
+        "FeatureFlags": "ItmoSoft\\FeatureFlags\\Facades\\FeatureFlags"
+      }
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

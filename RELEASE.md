@@ -1,0 +1,50 @@
+# Release instructions
+
+## Repository
+
+- Repository: `ITMOSOFT/laravel-feature-flags`
+- Composer package: `itmosoft/laravel-feature-flags`
+- Description: `Database-backed feature flags with deterministic percentage rollouts and subject overrides for Laravel applications.`
+
+## Validate locally
+
+```bash
+composer install
+composer test
+```
+
+Do not tag or publish until PHPUnit and GitHub Actions both pass.
+
+## Create the repository and push (run locally)
+
+Create a public repository named `laravel-feature-flags` under the ITMOSOFT organization, then run:
+
+```bash
+git init
+git add .
+git status
+git commit -m "feat: add Laravel feature flags package"
+git branch -M main
+git remote add origin https://github.com/ITMOSOFT/laravel-feature-flags.git
+git push -u origin main
+```
+
+## Tag after tests and CI pass
+
+```bash
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0
+```
+
+## Packagist
+
+1. Sign in to Packagist.
+2. Submit `https://github.com/ITMOSOFT/laravel-feature-flags`.
+3. Enable the GitHub service hook if prompted.
+4. Confirm Packagist detects `itmosoft/laravel-feature-flags` and the `v1.0.0` tag.
+
+## GitHub Release
+
+Title: `v1.0.0 - Initial Release`
+
+Use the release notes included in the delivery message.
